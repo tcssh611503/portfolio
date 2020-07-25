@@ -170,7 +170,7 @@ section#section_about .container .col-sm-5 .myphoto {
   transform: translate(-50%, -50%);
   width: 250px;
   height: 250px;
-  background-image: url(http://www.hsuanyi.org/portfolio/image/profilepicture.jpg);
+  background-image: url(../image/profilepicture.jpg);
   background-size: 100%;
   border-radius: 50%;
   transform-origin: center center;

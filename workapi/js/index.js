@@ -11,10 +11,13 @@ $(window).scroll(function(e){
 
 //緩慢滑動
 $(document).on('click', 'a', function(event){
-    //加上超連結會有bug     
-    // event.preventDefault();
+  //不執行預設動作     
+  event.preventDefault();
+  var target=$(this).attr('href');
+  console.log(target);
     $('html, body').animate({
-        scrollTop: $( $.attr(this, 'href') ).offset().top
+        //抓到目標後偏移上下左右的距離         
+        scrollTop: $(target).offset().top
     }, 500);
 });
 
@@ -24,8 +27,8 @@ $(window).mousemove(function(evt){
   var pagex=evt.pageX;
   var pagey=evt.pageY;
   
-  $(".mountain").css("transform","translateX("+(pagex/-20+50)+"px")
-
+  $(".mountain").css("transform","translateX("+(pagex/-20+50)+"px)")
+  
   //滑鼠的距離與about頁面   
   var x=pagex-$("#section_about").offset().left;
   var y=pagey-$("#section_about").offset().top;
@@ -46,19 +49,19 @@ $(window).mousemove(function(evt){
   //貓的上方   
   var cattop=$("#cat").offset().top;
   //網址前綴   
-  var img_url="./image/";
+  var img_url="https://awiclass.monoame.com/catpic/";
   
   if (pagex<catplace-50)
-    $("#cat").attr("src",img_url+"chef_left.png")
+    $("#cat").attr("src",img_url+"cat_left.png")
   else if (pagex>catplace+50)
-    $("#cat").attr("src",img_url+"chef_right.png")
+    $("#cat").attr("src",img_url+"cat_right.png")
   else
-    $("#cat").attr("src",img_url+"chef_top.png")
+    $("#cat").attr("src",img_url+"cat_top.png")
   
   if (pagex<catplace-50 && pagey<cattop)
-    $("#cat").attr("src",img_url+"chef_lefttop.png")
+    $("#cat").attr("src",img_url+"cat_lefttop.png")
   if (pagex>catplace+50 && pagey<cattop)
-    $("#cat").attr("src",img_url+"chef_righttop.png")
+    $("#cat").attr("src",img_url+"cat_righttop.png")
 // 旋轉喵喵
 
 // 三隻喵喵
@@ -68,7 +71,7 @@ function detect_cat(cat_id,x){
   if (Math.abs(x-catplace)<80)
     $(cat_id).css("bottom","0px");
   else
-    $(cat_id).css("bottom","-150px");
+    $(cat_id).css("bottom","-50px");
 } 
   
   detect_cat("#cat_yellow",pagex);
@@ -78,11 +81,12 @@ function detect_cat(cat_id,x){
   
   
   
-  
+// about  
 //文字 
   $(".r1text").css("transform","translateX("+(y/-5)+"px)")
-  $(".r2text").css("transform","translateX("+(y/-10)+"px)")
-  $(".r3text").css("transform","translateX("+(y/-12)+"px)")
+  $(".r1text_job").css("transform","translateX("+(y/-10)+"px)")
+  $(".r2text").css("transform","translateX("+(y/-15)+"px)")
+  $(".r3text").css("transform","translateX("+(y/-15)+"px)")
   
   //三角形-5 -10 -12 移動越來越慢   
   $(".tri1").css("transform","translateX("+(x/-5)+"px)")
@@ -91,5 +95,26 @@ function detect_cat(cat_id,x){
   $(".tri4").css("transform","translateX("+(x/-14)+"px)")
   $(".tri5").css("transform","translateX("+(x/-16)+"px)")
  
+  
+});
+
+
+
+//vue監看物件，用vue 2.0以上版本
+var vm = new Vue({
+  el: "#app",
+  data: {
+    works: []
+  },
+  mounted: function(){
+    var vobj=this;
+    $.ajax({
+      type: "get",
+      url: "./workapi.txt",
+      success: function(res){
+        vobj.works=JSON.parse(res);
+      }
+    });
+  }
   
 });

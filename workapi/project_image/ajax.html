@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<script type="text/javascript">
+function getData(){
+	// 物件專門用來和伺服器連線
+	var req=new XMLHttpRequest();
+	// 連線方法 網址
+	req.open("get", "http://www.hsuanyi.org/portfolio/workapi/1.html");
+    // 偵測連線狀態
+    req.onload=function(){
+    	// 在彈跳視窗印出
+    	// alert(this.responseText);
+    	var content=document.getElementByID("content");
+    	content.innerHTML=this.responseText;
+    };
+
+    // 送出連線
+    req.send();
+}
+
+</script>
+<body>
+	<div>
+		<span onclick="getData();">1</span>
+		<span>2</span>
+	</div>
+	<hr>
+<div id="content">
+	
+</div>
+
+</body>
+</html>
