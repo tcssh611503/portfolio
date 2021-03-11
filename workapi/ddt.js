@@ -1,4 +1,4 @@
-{
+export default{
     orders: [
         {
             name: 'Livi優活 抽取式衛生紙(100抽x10包x10串/箱)',
