@@ -1,0 +1,40 @@
+{
+  "list":[
+    {
+      "name": "mocodo口罩防護墊片5片",
+      "img": "https://diz36nn4q02zr.cloudfront.net/webapi/imagesV3/Original/SalePage/6215329/0/637587936234400000?v=1",
+      "status": {
+        "on_sale": true,
+        "discount_price": 49
+      },
+      "price": 95
+    },
+    {
+      "name": "科威護膚抗菌乾洗手100ml",
+      "img": "https://diz36nn4q02zr.cloudfront.net/webapi/imagesV3/Original/SalePage/3574610/0/637587936296500000?v=1",
+        "status": {
+          "on_sale": false,
+          "discount_price": null
+        },
+      "price": 250
+    },
+    {
+      "name": "博寶兒抑菌洗手乳-佩佩豬300ml",
+      "img": "https://diz36nn4q02zr.cloudfront.net/webapi/imagesV3/Original/SalePage/3245401/0/637587936328500000?v=1",
+      "status": {
+        "on_sale": false,
+        "discount_price": null
+      },
+      "price": 109
+    },
+    {
+      "name": "Dr.Formula抗菌淨味潔手乳300g",
+      "img": "https://diz36nn4q02zr.cloudfront.net/webapi/imagesV3/Original/SalePage/2549074/0/637587936299970000?v=1",
+      "status": {
+        "on_sale": false,
+        "discount_price": null
+      },
+      "price": 89
+    }
+  ]
+}
